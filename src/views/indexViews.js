@@ -18,12 +18,12 @@ const indexViews = (async () => {
 			let button = document.createElement('button');
 			button.innerText = 'Fetch';
 			button.addEventListener('click', async (e) => {
-				renderTempContainer();
+				renderTemp();
 			});
 			card.appendChild(button);
 		})();
 
-		const renderTempContainer = async () => {
+		const renderTemp = async () => {
 			if (!document.querySelector('#temp-container')) {
 				let tempContainer = document.createElement('div');
 				tempContainer.classList.add('container');
@@ -48,7 +48,7 @@ const indexViews = (async () => {
 				)}° F`;
 			}
 		};
-		renderTempContainer();
+		renderTemp();
 	})();
 
 	return {};
