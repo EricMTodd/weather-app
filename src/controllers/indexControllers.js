@@ -3,14 +3,6 @@ const indexControllers = (() => {
 
 	const getCityTemp = async (city) => {
 		try {
-			const verifyCleanData = (() => {
-				city = city.trim();
-				if (city === '') {
-					document.querySelector('input').value = 'Denver';
-					city = 'Denver';
-				}
-			})();
-
 			const str = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 			let response = await fetch(str);
@@ -18,6 +10,8 @@ const indexControllers = (() => {
 			return data.main.temp;
 		} catch (err) {
 			console.log(`Failure to fetch: ${err}`);
+			alert(`${city} does not exist!`);
+			window.location.reload();
 		}
 	};
 
