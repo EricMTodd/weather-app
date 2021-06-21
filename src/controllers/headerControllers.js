@@ -10,7 +10,7 @@ const headerControllers = (() => {
 			);
 			response = await response.json();
 			console.log(response);
-			mainViews.renderCityWeather(city, response.coord.lon, response.coord.lat);
+			mainViews.renderCityWeather(response);
 		} catch (err) {
 			console.log(err);
 		}

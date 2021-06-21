@@ -10,36 +10,41 @@ body {
 }
 
 header {
+	color: white;
 	display: flex;
 	align-items: center;
-	color: white;
-	background: rgba(0, 0, 0, 0.6);
-	height: 10vh;
+	background: rgba(0, 0, 0, 0.7);
+	height: 40px;
 }
 
 header i {
 	margin-right: 10px;
+	height: 20px;
 }
 
 #title {
 	margin-left: 10px;
 	margin-right: auto;
-	font-size: 7vh;
+	font-size: 20px;
 }
 
 #city-search {
 	margin-right: 10px;
 	border: none;
 	padding: 5px;
+	height: 25px;
 	background: rgba(255, 255, 255, 0.6);
 }
 
-main {
-	background: rgba(0, 0, 0, 0.3);
-	height: 85vh;
+.card {
+	color: white;
+	height: 400px;
+	width: 300px;
+	background: rgba(0, 0, 0, 0.7);
+	margin: 10px auto;
 }
 
-footer {
-	background: rgba(0, 0, 0, 0.6);
-	height: 5vh;
+.card div {
+	font-size: 30px;
+	text-align: center;
 }
