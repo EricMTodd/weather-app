@@ -1,5 +1,5 @@
 import './style.css';
-import './views/indexViews';
+import headerViews from './views/headerViews';
 
 const app = (() => {
 	return {};
