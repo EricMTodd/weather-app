@@ -23,8 +23,13 @@ const mainViews = (() => {
 		})();
 	};
 
-	const renderCityWeather = (response) => {
-		renderWeatherInfoCard(response);
+	const renderCityWeather = (data) => {
+		let card = document.querySelector('.card');
+		if (!card) {
+			return renderWeatherInfoCard(data);
+		}
+		card.remove();
+		return renderWeatherInfoCard(data);
 	};
 	return {
 		renderCityWeather,
