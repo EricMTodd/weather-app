@@ -1,13 +1,23 @@
 const storageControllers = (() => {
-	const checkStorageStatus = (() => {
+	let storageObject;
+	const instantiateLocalStorage = (() => {
 		if (!localStorage.weatherly) {
-			let storageObject = { city: 'Denver' };
-			let storageString = JSON.stringify(storageObject);
+			let storageString = JSON.stringify({ city: 'Denver' });
 			localStorage.setItem('weatherly', storageString);
 		}
-		console.log(localStorage);
+		storageObject = JSON.parse(localStorage.weatherly);
 	})();
-	return {};
+
+	const load = () => {
+		return storageObject;
+	};
+
+	const save = () => {
+		console.log('save');
+	};
+	return {
+		load,
+	};
 })();
 
 export default storageControllers;

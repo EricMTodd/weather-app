@@ -1,50 +1,62 @@
 * {
 	font-family: arial;
+	color: white;
 }
 
 body {
-	margin: 0 auto;
+	/* background: url(https://images.hdqwalls.com/download/mountain-range-blue-5k-yf-1920x1080.jpg)
+		no-repeat center center fixed; */
 	background: url(https://images.wallpaperscraft.com/image/starry_sky_night_mountains_117812_1920x1080.jpg)
 		no-repeat center center fixed;
 	background-size: cover;
+	margin: 0 auto;
+}
+
+#content {
+	height: 100vh;
 }
 
 header {
-	color: white;
 	display: flex;
 	align-items: center;
-	background: rgba(0, 0, 0, 0.7);
-	height: 40px;
+	background: rgb(0, 0, 0, 0.6);
+	height: 7vh;
 }
 
-header i {
-	margin-right: 10px;
-	height: 20px;
-}
-
-#title {
+#app-title {
 	margin-left: 10px;
 	margin-right: auto;
-	font-size: 20px;
+	font-size: 4vh;
 }
 
-#city-search {
+#search-icon {
+	font-size: 3vh;
+}
+
+#search-input {
+	margin-left: 10px;
 	margin-right: 10px;
-	border: none;
-	padding: 5px;
-	height: 25px;
-	background: rgba(255, 255, 255, 0.6);
 }
 
-.card {
-	color: white;
-	height: 300px;
-	width: 400px;
-	background: rgba(0, 0, 0, 0.7);
-	margin: 30px auto;
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 93vh;
 }
 
-.card div {
-	font-size: 30px;
+.weather-card {
+	height: 350px;
+	width: 550px;
+	background: rgb(0, 0, 0, 0.6);
+	border-top: 2px solid rgb(255, 255, 255, 0.6);
+	border-left: 2px solid rgb(150, 150, 150, 0.6);
+	border-bottom: 2px solid rgb(50, 50, 50, 1);
+	border-right: 2px solid rgb(50, 50, 50, 1);
+}
+
+.city-name {
 	text-align: center;
+	margin-top: 10px;
+	font-size: 50px;
 }

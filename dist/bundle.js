@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \".container {\\n\\tbackground: black;\\n\\tcolor: white;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"* {\\n\\tfont-family: arial;\\n\\tcolor: white;\\n}\\n\\nbody {\\n\\t/* background: url(https://images.hdqwalls.com/download/mountain-range-blue-5k-yf-1920x1080.jpg)\\n\\t\\tno-repeat center center fixed; */\\n\\tbackground: url(https://images.wallpaperscraft.com/image/starry_sky_night_mountains_117812_1920x1080.jpg)\\n\\t\\tno-repeat center center fixed;\\n\\tbackground-size: cover;\\n\\tmargin: 0 auto;\\n}\\n\\n#content {\\n\\theight: 100vh;\\n}\\n\\nheader {\\n\\tdisplay: block;\\n\\tbackground: rgb(0, 0, 0, 0.6);\\n\\tborder-bottom: 2px solid rgb(50, 50, 50, 1);\\n\\theight: 7vh;\\n}\\n\\nheader div {\\n\\tdisplay: flex;\\n\\talign-items: center;\\n\\tmargin-left: 10px;\\n\\theight: 100%;\\n\\tfont-size: 5vh;\\n}\\n\\nmain {\\n\\tdisplay: flex;\\n\\tjustify-content: center;\\n\\talign-items: center;\\n\\theight: 93vh;\\n}\\n\\n.weather-card {\\n\\theight: 300px;\\n\\twidth: 400px;\\n\\tbackground: rgb(0, 0, 0, 0.6);\\n\\tborder-top: 2px solid rgb(255, 255, 255, 0.6);\\n\\tborder-left: 2px solid rgb(150, 150, 150, 0.6);\\n\\tborder-bottom: 2px solid rgb(50, 50, 50, 1);\\n\\tborder-right: 2px solid rgb(50, 50, 50, 1);\\n}\\n\\n.city-name {\\n\\ttext-align: center;\\n\\tmargin-top: 10px;\\n\\tfont-size: 30px;\\n}\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://weather-app/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -56,7 +56,37 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst app = (() => {\n\tconst content = document.querySelector('#content');\n\tcontent.classList.add('altered');\n\n\tconst div = document.createElement('div');\n\tdiv.innerHTML = '<h1>Suh</h1>';\n\tdiv.classList.add('container');\n\tcontent.appendChild(div);\n\treturn {};\n})();\n\n\n//# sourceURL=webpack://weather-app/./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _controllers_storageControllers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/storageControllers */ \"./src/controllers/storageControllers.js\");\n/* harmony import */ var _views_headerViews__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/headerViews */ \"./src/views/headerViews.js\");\n/* harmony import */ var _views_mainViews__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/mainViews */ \"./src/views/mainViews.js\");\n\n\n\n\n\nconst app = (() => {\n\treturn {};\n})();\n\n\n//# sourceURL=webpack://weather-app/./src/app.js?");
+
+/***/ }),
+
+/***/ "./src/controllers/storageControllers.js":
+/*!***********************************************!*\
+  !*** ./src/controllers/storageControllers.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst storageControllers = (() => {\n\tlet storageObject;\n\tconst instantiateLocalStorage = (() => {\n\t\tif (!localStorage.weatherly) {\n\t\t\tlet storageString = JSON.stringify({ city: 'London' });\n\t\t\tlocalStorage.setItem('weatherly', storageString);\n\t\t}\n\t\tstorageObject = localStorage.weatherly;\n\t})();\n\n\tconst load = () => {\n\t\tconsole.log(storageObject);\n\t\treturn storageObject;\n\t};\n\n\tconst save = () => {\n\t\tconsole.log('save');\n\t};\n\treturn {};\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (storageControllers);\n\n\n//# sourceURL=webpack://weather-app/./src/controllers/storageControllers.js?");
+
+/***/ }),
+
+/***/ "./src/views/headerViews.js":
+/*!**********************************!*\
+  !*** ./src/views/headerViews.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst headerViews = (() => {\n\tconst header = document.querySelector('header');\n\tconst renderAppTitle = (() => {\n\t\tconst div = document.createElement('div');\n\t\tdiv.id = 'app-title';\n\t\tdiv.innerText = 'Weatherly';\n\t\theader.appendChild(div);\n\t})();\n\treturn {};\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (headerViews);\n\n\n//# sourceURL=webpack://weather-app/./src/views/headerViews.js?");
+
+/***/ }),
+
+/***/ "./src/views/mainViews.js":
+/*!********************************!*\
+  !*** ./src/views/mainViews.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _controllers_storageControllers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../controllers/storageControllers */ \"./src/controllers/storageControllers.js\");\n\n\nconst mainViews = (() => {\n\tlet storageObject = _controllers_storageControllers__WEBPACK_IMPORTED_MODULE_0__.default.load();\n\n\tconst main = document.querySelector('main');\n\tconst renderWeatherCard = (() => {\n\t\tlet card = document.createElement('div');\n\t\tcard.classList.add('weather-card');\n\t\tmain.appendChild(card);\n\n\t\tconst renderCityName = (() => {\n\t\t\tconst title = document.createElement('div');\n\t\t\ttitle.classList.add('city-name');\n\t\t\ttitle.innerText = 'city-name';\n\t\t\tcard.appendChild(title);\n\t\t})();\n\t})();\n\n\treturn {};\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mainViews);\n\n\n//# sourceURL=webpack://weather-app/./src/views/mainViews.js?");
 
 /***/ })
 

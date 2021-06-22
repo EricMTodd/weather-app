@@ -1,33 +1,37 @@
-import headerControllers from '../controllers/headerControllers';
+import weatherControllers from '../controllers/weatherControllers';
 
 const headerViews = (() => {
 	const header = document.querySelector('header');
+	const renderAppTitle = (() => {
+		const div = document.createElement('div');
+		div.id = 'app-title';
+		div.innerText = 'Weatherly';
+		header.appendChild(div);
+	})();
 
-	const renderTitle = (() => {
-		let title = document.createElement('div');
-		title.classList.add('container');
-		title.id = 'title';
-		title.innerText = 'Weatherly';
-		header.appendChild(title);
+	const renderSearchIcon = (() => {
+		const icon = document.createElement('i');
+		icon.id = 'search-icon';
+		icon.classList.add('fa');
+		icon.classList.add('fa-search');
+		icon.addEventListener('click', (e) => {
+			weatherControllers.getCityName();
+		});
+		header.appendChild(icon);
 	})();
 
 	const renderSearchBar = (() => {
-		let icon = document.createElement('i');
-		icon.classList.add('material-icons');
-		icon.innerText = 'search';
-		icon.addEventListener('click', (e) => {
-			headerControllers.getCity();
-		});
-		header.appendChild(icon);
-
-		let input = document.createElement('input');
-		input.id = 'city-search';
-		input.type = 'text';
+		const input = document.createElement('input');
+		input.id = 'search-input';
 		input.placeholder = 'Search for a city';
+		input.autocomplete = 'off';
+		input.addEventListener('keypress', (e) => {
+			if (e.keyCode === 13) {
+				weatherControllers.getCityName();
+			}
+		});
 		header.appendChild(input);
 	})();
-
-	const renderCityWeather = () => {};
 	return {};
 })();
 

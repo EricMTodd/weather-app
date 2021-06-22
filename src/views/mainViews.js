@@ -1,39 +1,24 @@
-const mainViews = (() => {
-	const main = document.querySelector('main');
+import storageControllers from '../controllers/storageControllers';
 
-	const renderWeatherInfoCard = (response) => {
+const mainViews = (() => {
+	let storageObject = storageControllers.load();
+	console.log(storageObject);
+
+	const main = document.querySelector('main');
+	const renderWeatherCard = (() => {
 		let card = document.createElement('div');
-		card.classList.add('card');
+		card.classList.add('weather-card');
 		main.appendChild(card);
 
-		const renderCity = (() => {
-			let div = document.createElement('div');
-			div.classList.add('city-container');
-			div.innerText = response.name;
-			card.appendChild(div);
+		const renderCityName = (() => {
+			const title = document.createElement('div');
+			title.classList.add('city-name');
+			title.innerText = storageObject.city;
+			card.appendChild(title);
 		})();
+	})();
 
-		const renderTemperature = (() => {
-			let div = document.createElement('div');
-			div.classList.add('temperature-container');
-			div.innerText = `${
-				Math.round((response.main.temp - 273.15) * 9) / 5 + 32
-			} F°`;
-			card.appendChild(div);
-		})();
-	};
-
-	const renderCityWeather = (data) => {
-		let card = document.querySelector('.card');
-		if (!card) {
-			return renderWeatherInfoCard(data);
-		}
-		card.remove();
-		return renderWeatherInfoCard(data);
-	};
-	return {
-		renderCityWeather,
-	};
+	return {};
 })();
 
 export default mainViews;
