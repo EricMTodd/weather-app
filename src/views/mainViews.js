@@ -1,10 +1,9 @@
-import storage from '../controllers/storageControllers'
-
 const mainViews = (() => {
 	const main = document.querySelector('main');
 
 	const renderWeatherCard = () => {
-		let storageObject = storage.load()
+		let storageObject = JSON.parse(localStorage.weatherly);
+
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
 		main.appendChild(card);
@@ -12,17 +11,18 @@ const mainViews = (() => {
 		const renderCityName = (() => {
 			const title = document.createElement('div');
 			title.id = 'city-name';
-			title.innerText = storageObject.name;
+			title.innerText = storageObject.cityName;
 			card.appendChild(title);
 		})();
 	};
 
 	setTimeout(() => {
-		renderWeatherCard()
+		renderWeatherCard();
+	}, 500);
 
-	}, 500)
-
-	return {};
+	return {
+		renderWeatherCard,
+	};
 })();
 
 export default mainViews;
