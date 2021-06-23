@@ -12,11 +12,14 @@ const storageControllers = (() => {
 		return storageObject;
 	};
 
-	const save = () => {
-		console.log('save');
+	const save = (data) => {
+		let storageString = JSON.stringify(data);
+		localStorage.setItem('weatherly', storageString);
+		console.log(localStorage);
 	};
 	return {
 		load,
+		save,
 	};
 })();
 

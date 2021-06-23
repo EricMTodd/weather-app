@@ -2,7 +2,6 @@ import storageControllers from '../controllers/storageControllers';
 
 const mainViews = (() => {
 	let storageObject = storageControllers.load();
-	console.log(storageObject);
 
 	const main = document.querySelector('main');
 	const renderWeatherCard = (() => {
