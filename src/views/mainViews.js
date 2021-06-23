@@ -11,7 +11,7 @@ const mainViews = (() => {
 
 		const renderCityName = (() => {
 			const title = document.createElement('div');
-			title.classList.add('city-name');
+			title.id = 'city-name';
 			title.innerText = storageObject.city;
 			card.appendChild(title);
 		})();

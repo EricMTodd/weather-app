@@ -4,7 +4,7 @@ const weatherControllers = (() => {
 	const apiKey = '8d9b598296f463cb05d7baea7c741c65';
 	let storageObject = storageControllers.load();
 
-	const getCityName = async () => {
+	const getCityData = async () => {
 		let input = document.querySelector('#search-input');
 
 		if (!input.value) {
@@ -18,6 +18,7 @@ const weatherControllers = (() => {
 			response = await response.json();
 			console.log(response);
 			storageObject.city = input.value;
+			document.querySelector('#city-name').innerText = input.value;
 			storageControllers.save(storageObject);
 			input.value = '';
 		} catch (err) {
@@ -26,7 +27,7 @@ const weatherControllers = (() => {
 		return {};
 	};
 	return {
-		getCityName,
+		getCityData,
 	};
 })();
 
