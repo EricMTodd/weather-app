@@ -8,7 +8,7 @@ const storageControllers = (() => {
 		if (!localStorage.weatherly) {
 			try {
 				let response = await fetch(
-					`https://api.openweathermap.org/data/2.5/weather?q=Denver&appid=${apiKey}`
+					`https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}`
 				);
 				response = await response.json();
 
@@ -20,6 +20,27 @@ const storageControllers = (() => {
 				);
 
 				const storageString = await JSON.stringify(storageObject);
+				await localStorage.setItem('weatherly', storageString);
+			} catch (err) {
+				console.log(err);
+			}
+		} else {
+			try {
+				const storageObject = JSON.parse(localStorage.weatherly);
+
+				let response = await fetch(
+					`https://api.openweathermap.org/data/2.5/weather?q=${storageObject.cityName}&appid=${apiKey}`
+				);
+				response = await response.json();
+
+				const newStorageObject = new StorageObjectModel(
+					response.name,
+					response.coord,
+					response.weather[0],
+					response.main
+				);
+
+				const storageString = await JSON.stringify(newStorageObject);
 				await localStorage.setItem('weatherly', storageString);
 			} catch (err) {
 				console.log(err);

@@ -15,8 +15,7 @@ const headerViews = (() => {
 		icon.classList.add('fa');
 		icon.classList.add('fa-search');
 		icon.addEventListener('click', (e) => {
-			// weatherControllers.getCityData();
-			console.log('click')
+			weatherControllers.getCityData();
 		});
 		header.appendChild(icon);
 	})();
@@ -28,8 +27,7 @@ const headerViews = (() => {
 		input.autocomplete = 'off';
 		input.addEventListener('keypress', (e) => {
 			if (e.keyCode === 13) {
-				// weatherControllers.getCityData();
-				console.log('keypress')
+				weatherControllers.getCityData();
 			}
 		});
 		header.appendChild(input);

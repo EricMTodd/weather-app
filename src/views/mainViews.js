@@ -1,9 +1,10 @@
+import weatherControllers from '../controllers/weatherControllers';
+
 const mainViews = (() => {
 	const main = document.querySelector('main');
 
 	const renderWeatherCard = async () => {
 		let storageObject = await JSON.parse(localStorage.weatherly);
-		console.log(storageObject);
 
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
@@ -19,9 +20,9 @@ const mainViews = (() => {
 		const renderCityTemp = (() => {
 			const temp = document.createElement('div');
 			temp.id = 'city-temp';
-			temp.innerText = `${
+			temp.innerText = `${Math.round(
 				((storageObject.currentTemps.temp - 273.15) * 9) / 5 + 32
-			} °F`;
+			)} °F`;
 			card.appendChild(temp);
 		})();
 	};
