@@ -3,6 +3,7 @@ const mainViews = (() => {
 
 	const renderWeatherCard = async () => {
 		let storageObject = await JSON.parse(localStorage.weatherly);
+		console.log(storageObject);
 
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
@@ -14,11 +15,16 @@ const mainViews = (() => {
 			title.innerText = storageObject.cityName;
 			card.appendChild(title);
 		})();
+
+		const renderCityTemp = (() => {
+			const temp = document.createElement('div');
+			temp.id = 'city-temp';
+			temp.innerText = `${
+				((storageObject.currentTemps.temp - 273.15) * 9) / 5 + 32
+			} °F`;
+			card.appendChild(temp);
+		})();
 	};
-
-	// renderWeatherCard();
-
-	// setTimeout(() => {}, 500);
 
 	return {
 		renderWeatherCard,
