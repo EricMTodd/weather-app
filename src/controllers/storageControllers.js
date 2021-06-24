@@ -1,4 +1,5 @@
 import StorageObjectModel from '../models/storageObjectModel';
+import mainViews from '../views/mainViews';
 
 const storageControllers = (() => {
 	const apiKey = '8d9b598296f463cb05d7baea7c741c65';
@@ -18,12 +19,13 @@ const storageControllers = (() => {
 					response.main
 				);
 
-				const storageString = JSON.stringify(storageObject);
-				localStorage.setItem('weatherly', storageString);
+				const storageString = await JSON.stringify(storageObject);
+				await localStorage.setItem('weatherly', storageString);
 			} catch (err) {
 				console.log(err);
 			}
 		}
+		mainViews.renderWeatherCard();
 	})();
 
 	return {};

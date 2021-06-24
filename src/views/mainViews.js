@@ -1,8 +1,8 @@
 const mainViews = (() => {
 	const main = document.querySelector('main');
 
-	const renderWeatherCard = () => {
-		let storageObject = JSON.parse(localStorage.weatherly);
+	const renderWeatherCard = async () => {
+		let storageObject = await JSON.parse(localStorage.weatherly);
 
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
@@ -16,9 +16,9 @@ const mainViews = (() => {
 		})();
 	};
 
-	setTimeout(() => {
-		renderWeatherCard();
-	}, 500);
+	// renderWeatherCard();
+
+	// setTimeout(() => {}, 500);
 
 	return {
 		renderWeatherCard,
