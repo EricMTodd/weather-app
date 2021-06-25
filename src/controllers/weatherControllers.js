@@ -33,8 +33,24 @@ const weatherControllers = (() => {
 		mainViews.renderWeatherCard();
 		document.querySelector('#search-input').value = '';
 	};
+
+	const checkTemp = async () => {
+		let storageObject = JSON.parse(localStorage.weatherly);
+		let response = await fetch(
+			`https://api.openweathermap.org/data/2.5/weather?q=${storageObject.cityName}&appid=${apiKey}`
+		);
+
+		response = await response.json();
+
+		if (storageObject.currentTemps.temp !== response.main.temp) {
+			return getCityData();
+		}
+		return;
+	};
+
 	return {
 		getCityData,
+		checkTemp,
 	};
 })();
 
