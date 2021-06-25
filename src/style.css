@@ -26,7 +26,7 @@ header {
 #app-title {
 	margin-left: 1vw;
 	margin-right: auto;
-	font-size: 4vh;
+	font-size: calc(30px + 1vh);
 }
 
 #search-icon {
@@ -61,13 +61,22 @@ main {
 	padding: 0 30px 0 30px;
 }
 
+#city-name {
+	border-bottom: 2px solid white;
+}
+
 #city-name,
-#city-temp {
+#current-temp {
 	text-align: center;
 	margin-top: 10px;
 	font-size: calc(30px + 1vh);
 }
 
-#city-name {
-	border-bottom: 2px solid white;
+#daily-high,
+#daily-low {
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+	font-size: calc(30px + 1vh);
+	margin: 10px auto;
 }

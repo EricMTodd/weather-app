@@ -2,4 +2,5 @@
 
 ## TODO
 
-- Building storage for last city searched.
+- Display daily highs and lows
+- Render weather icon
