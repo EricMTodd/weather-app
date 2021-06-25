@@ -10,6 +10,9 @@ const mainViews = (() => {
 	const renderWeatherCard = async () => {
 		let storageObject = await JSON.parse(localStorage.weatherly);
 
+		const icon = storageObject.currentWeather.icon;
+		const openWeatherMapIconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
 		main.appendChild(card);
@@ -19,6 +22,13 @@ const mainViews = (() => {
 			title.id = 'city-name';
 			title.innerText = storageObject.cityName;
 			card.appendChild(title);
+		})();
+
+		const renderWeatherIcon = (() => {
+			const img = document.createElement('img');
+			img.id = 'icon-container';
+			img.src = openWeatherMapIconUrl;
+			card.appendChild(img);
 		})();
 
 		const renderCityTemp = (() => {

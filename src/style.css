@@ -63,6 +63,12 @@ main {
 
 #city-name {
 	border-bottom: 2px solid white;
+	margin-bottom: 40px;
+}
+
+#icon-container {
+	display: inline-block;
+	margin-left: 60px;
 }
 
 #city-name,
@@ -70,6 +76,10 @@ main {
 	text-align: center;
 	margin-top: 10px;
 	font-size: calc(30px + 1vh);
+}
+
+#current-temp {
+	display: inline-block;
 }
 
 #daily-high,
