@@ -8,7 +8,7 @@ const storageControllers = (() => {
 		if (!localStorage.weatherly) {
 			try {
 				let response = await fetch(
-					`https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}`
+					`https://api.openweathermap.org/data/2.5/weather?q=Denver&appid=${apiKey}`
 				);
 				response = await response.json();
 
