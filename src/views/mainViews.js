@@ -11,7 +11,7 @@ const mainViews = (() => {
 		let storageObject = await JSON.parse(localStorage.weatherly);
 
 		const icon = storageObject.currentWeather.icon;
-		const openWeatherMapIconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+		const openWeatherMapIconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
 		let card = document.createElement('div');
 		card.classList.add('weather-card');
