@@ -34,7 +34,7 @@ const weatherControllers = (() => {
 		document.querySelector('#search-input').value = '';
 	};
 
-	const checkTemp = async () => {
+	const checkWeather = async () => {
 		try {
 		} catch (err) {
 			console.log(err);
@@ -46,9 +46,10 @@ const weatherControllers = (() => {
 
 		response = await response.json();
 
-		if (storageObject.currentTemps.temp !== response.main.temp) {
-			console.log('Updating temperature...');
-
+		if (
+			storageObject.currentWeather.main !== response.weather[0].main ||
+			storageObject.currentTemps.temp !== response.main.temp
+		) {
 			const storageObject = new StorageObjectModel(
 				response.name,
 				response.coord,
@@ -62,12 +63,11 @@ const weatherControllers = (() => {
 			document.querySelector('.weather-card').remove();
 			return mainViews.renderWeatherCard();
 		}
-		return console.log('No changes in temperature.');
 	};
 
 	return {
 		getCityData,
-		checkTemp,
+		checkWeather,
 	};
 })();
 

@@ -6,9 +6,8 @@ import weatherControllers from './controllers/weatherControllers';
 
 const app = (() => {
 	setInterval(() => {
-		console.log('Checking temperature...');
-		weatherControllers.checkTemp();
-	}, 300000);
+		weatherControllers.checkWeather();
+	}, 900000);
 
 	return {};
 })();
