@@ -24,20 +24,26 @@ const mainViews = (() => {
 			card.appendChild(title);
 		})();
 
-		const renderWeatherIcon = (() => {
-			const img = document.createElement('img');
-			img.id = 'icon-container';
-			img.src = openWeatherMapIconUrl;
-			card.appendChild(img);
-		})();
+		const renderFirstContianer = (() => {
+			const container = document.createElement('div');
+			container.classList.add('container');
 
-		const renderCityTemp = (() => {
-			const temp = document.createElement('div');
-			temp.id = 'current-temp';
-			temp.innerText = `Currently: ${convertKelvinToFarenheit(
-				storageObject.currentTemps.temp
-			)} °F`;
-			card.appendChild(temp);
+			const renderWeatherIcon = (() => {
+				const img = document.createElement('img');
+				img.id = 'icon-container';
+				img.src = openWeatherMapIconUrl;
+				container.appendChild(img);
+			})();
+
+			const renderCityTemp = (() => {
+				const temp = document.createElement('div');
+				temp.id = 'current-temp';
+				temp.innerText = `Currently: ${convertKelvinToFarenheit(
+					storageObject.currentTemps.temp
+				)} °F`;
+				container.appendChild(temp);
+			})();
+			card.appendChild(container);
 		})();
 
 		const renderDailyHigh = (() => {

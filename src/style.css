@@ -50,15 +50,22 @@ main {
 
 .weather-card {
 	min-height: 350px;
+	max-height: 40vh;
 	min-width: 550px;
 	height: 60vh;
-	width: 50vw;
+	width: 35vw;
 	background: rgb(0, 0, 0, 0.6);
 	border-top: 2px solid rgb(255, 255, 255, 0.6);
 	border-left: 2px solid rgb(150, 150, 150, 0.6);
 	border-bottom: 2px solid rgb(50, 50, 50, 1);
 	border-right: 2px solid rgb(50, 50, 50, 1);
 	padding: 0 30px 0 30px;
+}
+
+.container {
+	display: block;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
 #city-name {
@@ -68,7 +75,6 @@ main {
 
 #icon-container {
 	display: inline-block;
-	margin-left: 60px;
 }
 
 #city-name,
