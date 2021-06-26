@@ -35,6 +35,10 @@ const weatherControllers = (() => {
 	};
 
 	const checkTemp = async () => {
+		try {
+		} catch (err) {
+			console.log(err);
+		}
 		let storageObject = JSON.parse(localStorage.weatherly);
 		let response = await fetch(
 			`https://api.openweathermap.org/data/2.5/weather?q=${storageObject.cityName}&appid=${apiKey}`
@@ -43,9 +47,22 @@ const weatherControllers = (() => {
 		response = await response.json();
 
 		if (storageObject.currentTemps.temp !== response.main.temp) {
-			return getCityData();
+			console.log('Updating temperature...');
+
+			const storageObject = new StorageObjectModel(
+				response.name,
+				response.coord,
+				response.weather[0],
+				response.main
+			);
+
+			const storageString = await JSON.stringify(storageObject);
+			await localStorage.setItem('weatherly', storageString);
+
+			document.querySelector('.weather-card').remove();
+			return mainViews.renderWeatherCard();
 		}
-		return;
+		return console.log('No changes in temperature.');
 	};
 
 	return {
